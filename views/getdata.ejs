@@ -1,0 +1,67 @@
+
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>Student Result</title> 
+        <style> 
+        table 
+        { 
+            border-collapse: collapse; 
+            width: 90%; 
+            margin: 30px auto; 
+        } 
+        th,td 
+        { 
+            border: 1px solid black; 
+            padding: 10px; 
+            text-align: center 
+        } 
+        th 
+        { 
+            background-color: lightblue; 
+        } 
+        h1 
+        { 
+            text-align: center; 
+        } 
+        </style> 
+    </head>
+
+<h1>Student Result</h1>
+<table>
+    <tr> 
+        <th>Sr No</th>
+        <th>Name</th>
+        <th>Subject 1</th>
+        <th>Subject 2</th>
+        <th>Subject 3</th> 
+        <th>Subject 4</th>
+        <th>Subject 5</th>
+        <th>Total</th> 
+        <th>Percentage</th> 
+        <th>Result</th> 
+    </tr> 
+    <% alldata.map((student,index)=>
+    { let total = Number(student.s1) +
+        Number(student.s2) + 
+        Number(student.s3) + 
+        Number(student.s4) + 
+        Number(student.s5); 
+        let percentage = (total / 500) * 100; 
+        let result = percentage >= 35 ? "Pass" : "Fail"
+    %>         
+    <tr>
+        <td><%= index + 1 %></td> 
+        <td><%= student.name %></td> 
+        <td><%= student.s1 %></td> 
+        <td><%= student.s2 %></td> 
+        <td><%= student.s3 %></td> 
+        <td><%= student.s4 %></td> 
+        <td><%= student.s5 %></td> 
+        <td><%= total %></td> 
+        <td><%= percentage.toFixed(2) %>%</td> 
+        <td><%= result %></td> 
+    </tr>
+    <% }) %> 
+</table>
+
