@@ -16,7 +16,7 @@
   "main": "app.js",
   "scripts": {
   
-    "start":"nodemon getdata.js",
+    "start":"nodemon form.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

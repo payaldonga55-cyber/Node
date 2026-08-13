@@ -4,7 +4,7 @@ const app = express()
 
 app.get('/',(req , res) => {
     // res.send("Hello")
-    res.render('index.ejs')
+    //res.render('index.ejs')
 })
 app.get('/about' , (req , res) => {
     // res.send("This is about page")
