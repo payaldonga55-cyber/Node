@@ -3,8 +3,8 @@ const app=express()
 const fs=require('fs')
 let arr = []
 let editId=null
- const readData=fs.readFileSync('data.json','utf-8')
- if(readData != "")
+const readData=fs.readFileSync('data.json','utf-8')
+if(readData != "")
 {
      arr = JSON.parse(readData)
 }
