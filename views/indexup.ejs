@@ -1,32 +1,34 @@
-<form action="createData">
-    <input type="hidden" name="id" id="" value="<%=(editData)?editData.id:"" %>">     
-    Name:-<input type="text" name="name" id="" value="<%=(editData)?editData.name:""%>"> 
+<form action="/createData">
+    <input type="hidden" name="id" id="" value="<%= (editData) ? editData.id : "" %>">
+    name = <input type="text" name="name" id=""  value="<%= (editData) ? editData.name : "" %>">
     <br><br>
-    Age:-<input type="number" name="age" id="" value="<%=(editData)?editData.age:""%>">   
+    age = <input type="number" name="age" id="" value="<%= (editData) ? editData.age : "" %>">
     <br><br>
-    <br><br>
-    Submit<input type="submit" name="" id="">
+    submit = <input type="submit" name="" id="">
 </form>
+
+
 <table border="1">
     <tr>
-        <td>Name</td>
-        <td>Age</td>
+        <td>name</td>
+        <td>age</td>
         <td>DELETE</td>
         <td>UPDATE</td>
     </tr>
     <%
-        data.map((i.index)=>{
+        data.map((i , index) => {
     %>
-    <tr>
-        <td><%=i.name%></td>
-        <td><%=i.age%></td>
-        <td>
-            <button><a href="/deleteData/<%= i.id %>">DELETE</a></button>
-        </td>
-        <td>
-            <button><a href="/editData/<%= i.id %>">UPDATE</a></button>
-        </td>
-    </tr>
+            <tr>
+                <td><%= i.name %></td>
+                <td><%= i.age %></td>
+                <td>
+                    <button><a href="/deleteData/<%= i.id %>">DELETE</a></button>
+                </td>
+                <td>
+                    <button><a href="/editData/<%= i.id %>">UPDATE</a></button>
+                </td>
+            </tr>
+    <%
         })
     %>
 </table>
