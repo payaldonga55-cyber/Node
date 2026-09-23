@@ -1,0 +1,23 @@
+<form action="/createData" method="post">
+    name <input type="text" name="name" id="">
+    <br> <br>
+    age <input type="number" name = "age" id="">
+    <br> <br>
+    <button type="submit">Submit</button>
+</form>
+<table border="1">
+    <tr>
+        <td>NAme</td>
+        <td>Age</td>
+    </tr>
+    <%
+        allData.map((i , index) => {
+    %>
+            <tr>
+                <td><%= i.name %></td>
+                <td><%= i.age %></td>
+            </tr>
+    <%
+        })
+    %>
+</table>
