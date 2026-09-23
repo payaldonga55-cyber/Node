@@ -1,7 +1,8 @@
 <form action="/createData" method="post">
-    name <input type="text" name="name" id="">
+    <input type="hidden" name="id" id="" value="<%= (editData) ? editData._id : "" %>">
+    name <input type="text" name="name" id="" value="<%= (editData) ? editData.name : "" %>">
     <br> <br>
-    age <input type="number" name = "age" id="">
+    age <input type="number" name = "age" id="" value="<%= (editData) ? editData.age : "" %>">
     <br> <br>
     <button type="submit">Submit</button>
 </form>
@@ -9,6 +10,8 @@
     <tr>
         <td>NAme</td>
         <td>Age</td>
+        <td>DELETE</td>
+        <td>UPDATE</td>
     </tr>
     <%
         allData.map((i , index) => {
@@ -16,6 +19,12 @@
             <tr>
                 <td><%= i.name %></td>
                 <td><%= i.age %></td>
+                <td>
+                    <button><a href="/deleteData/<%= i._id %>">Delete</a></button>
+                </td>
+                <td>
+                    <button><a href="/editData/<%= i._id %>">Update</a></button>
+                </td>
             </tr>
     <%
         })
